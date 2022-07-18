@@ -1,0 +1,12 @@
+from bs4 import BeautifulSoup
+import requests
+
+def getAmazonPrices(productURL):
+
+    res = requests.get(productURL)
+
+    res.raise_for_status()
+
+    soup = BeautifulSoup(res.text, 'html.parser')
+
+    
